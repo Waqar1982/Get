@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekstra 1</title>
+
+</head>
+<body>
+    <h1>Legg Sammen Tall</h1>
+    <input type="number" id="tall1" placeholder=" Første tallet" />
+    <input type="number" id="tall2" placeholder="Andre tallet" />
+    <input type="number" id="tall3" placeholder="Minus tallet" />
+    <button style="background-color: aqua; border-radius: 50px;" onclick="leggSammen()">Legg sammen</button>
+
+    <script>
+        function leggSammen() {
+            let tall1 = parseFloat(document.getElementById("tall1").value);
+            let tall2 = parseFloat(document.getElementById("tall2").value);
+            let tall3 = parseFloat(document.getElementById("tall3").value);
+            let sum = tall1 + tall2 - tall3;
+            alert("Summen er: " + sum);
+        }
+    </script>
+</body>
+</html>

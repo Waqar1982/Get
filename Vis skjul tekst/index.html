@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vis/Skjul tekst</title>
+
+</head>
+<body>
+    <h1>Hallo!</h1>
+
+    <div id="tekst">Hallo hvordan går det?.</div>
+
+    <button id="knapp" onclick="text()">Skjul tekst</button>
+
+
+    <script>
+        let tekstSynlig ;  
+
+        function text() {
+            const tekst = document.getElementById("tekst");
+            const knapp = document.getElementById("knapp");
+
+            if (tekstSynlig) {
+                tekst.style.display = "none";  
+                knapp.innerHTML = "Vis tekst";  
+            } else {
+                tekst.style.display = "block";
+                knapp.innerHTML = "Skjul tekst";  
+            }
+
+            tekstSynlig = !tekstSynlig;  
+        }
+    </script>
+</body>
+</html>

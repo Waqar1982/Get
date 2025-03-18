@@ -1,0 +1,48 @@
+body {
+  margin-left: 20px;
+  border: #4885ed;
+}
+
+.card {
+  width: 250px;
+  background-color: transparent;
+  margin: 20px;
+  border-radius: 100px;
+  color:white;
+}
+
+.innerCard{
+  padding: 20px
+}
+
+.header {
+  color: white;
+  text-align: center;
+  font-size: x-large;
+  padding: 1% solid grey;
+  user-select: none;
+  border-radius: 200px;
+ 
+}
+
+.black {
+  background-color:black;
+}
+
+.hidden{
+  display: none;
+ 
+}
+
+.imgcontener{
+height: 100%;
+width: 100%;
+
+}
+.imgcontener img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+}
+

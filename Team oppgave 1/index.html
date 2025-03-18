@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: darkgrey;
+            margin: 0px;
+            padding: 0px;
+            background-image: url(./enterance.png);
+            max-width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            border: 2px solid black;
+            color: black;
+            width: 370px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 40%;
+            border-radius: 20px;
+            background-color: white;
+        }
+
+        #spørsmål{
+            font-size: 25px;
+            margin-left: 40%;
+            border: 2px solid black;
+            width: 370px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            border-radius: 20px;
+            color: white;
+        }
+
+        #inputField {
+            border-radius: 15px;
+            font-size: 25px;
+            margin-left: 41%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #btnSubmit {
+            border-radius: 15px;
+            font-size: 25px;
+            margin-left: 47%;
+            cursor: pointer;
+        }
+        
+        #goToNextLvl {
+            background-color: darkgreen;
+            margin-left: 39%;
+            margin-top: 5%;
+            font-size: 35px;
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .gameOverText {
+            background-color: darkred;
+            margin-left: 43%;
+            margin-top: 5%;
+            font-size: 35px;
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+            height: 50px;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .escapeText {
+            background-color: darkgreen;
+            margin-left: 43%;
+            margin-top: 5%;
+            font-size: 35px;
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+            height: 50px;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #leaveText{
+            color: red;
+            font-size: 60px;
+            margin-top: 10%;
+            margin-left: 30%;
+        }
+
+        #clownImg{
+            height: 250px;
+            width: 350px;
+        }
+
+        #enteranceBtns {
+            margin-left: 43%;
+            margin-top: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div id="enterance">
+        <div id="leaveText"></div>
+        
+            <div id="enteranceBtns">
+                <button style="font-size: 50px; background-color: darkred;" class="enterHouse" onclick="level1()">Enter</button>
+                <button style="font-size: 50px; " class="leaveHouse" onclick="leave()">Leave</button>
+            </div>
+    </div>
+    <div id="level1Div"></div>
+<script>
+    // Model
+let sp1Answer = "4";
+let sp2Answer = "8";
+let sp3Answer = "10";
+let lvl1Img = "url(./escaperoomLVL1.png";
+let lvl2Img = "url(./escaperoomLVL2.png)";
+let lvl3Img = "url(./escaperoomLVL3.png)";
+
+   // View
+   function leave() {
+    document.getElementById('leaveText').innerHTML = /*HTML*/`
+    <img id="clownImg" src="./clown.png"> YOU'RE A CLOWN!
+    `
+    document.getElementById('enteranceBtns').innerHTML= "";
+   }
+
+   function level1() {
+    document.body.style.backgroundImage = lvl1Img;
+    document.getElementById('enterance').innerHTML = "";
+    document.getElementById('level1Div').innerHTML = /*HTML*/`
+    <h1 id="header">Escape Room level 1!</h1>
+
+    <div id="spørsmål">
+        Hva er 2+2?
+    </div>
+
+    <div id="submitDiv">
+        <input id="inputField" type="text" placeholder="skriv svaret ditt her">
+        <button id="btnSubmit" onclick="submit()">Check</button>
+    </div>
+
+    <div id="text"></div>
+    `;
+
+   }
+function submit(){
+    let inputId = document.getElementById("inputField").value.trim();
+
+    if(inputId == sp1Answer) {
+        document.getElementById('text').innerHTML = /*HTML*/`
+        <button id="goToNextLvl" onclick="level2()">Correct! Go to Next Level!</button>
+        `;
+        document.getElementById('text').classList.remove('gameOverText');
+        
+    } else {
+        document.getElementById('text').innerHTML = "Game over!";
+        document.getElementById('text').classList.add('gameOverText');
+        setTimeout(resetGame, 2000);
+    }
+}
+function level2(){
+    document.body.style.backgroundImage = lvl2Img;
+    document.getElementById('header').innerHTML = "Escape Room Level 2!";
+    document.getElementById('spørsmål').innerHTML = "Hva er 4+4";
+    document.getElementById("inputField").value = "";
+    document.getElementById('text').innerHTML = "";
+    document.getElementById('btnSubmit').setAttribute("onclick", "submitLevel2()");
+    
+   
+}
+
+function submitLevel2() {
+    let inputId = document.getElementById("inputField").value.trim();
+    if(inputId == sp2Answer) {
+        document.getElementById('text').innerHTML = /*HTML*/`
+        <button id="goToNextLvl" onclick="level3()">Correct! Go to Next Level!</button>
+        `;
+        document.getElementById('text').classList.remove('gameOverText');
+    } else {
+        document.getElementById('text').innerHTML = "Game over!";
+        document.getElementById('text').classList.add('gameOverText');
+        setTimeout(resetGame, 2000);
+    }
+
+    
+}
+
+function level3(){
+    document.body.style.backgroundImage = lvl3Img;
+    document.getElementById('header').innerHTML = "Last Room!";
+    document.getElementById('spørsmål').innerHTML = "Hva er 5+5";
+    document.getElementById("inputField").value = "";
+    document.getElementById('text').innerHTML = "";
+    document.getElementById('btnSubmit').setAttribute("onclick", "submitLevel3()");
+   
+}
+
+function submitLevel3() {
+    let inputId = document.getElementById("inputField").value.trim();
+    if(inputId == sp3Answer) {
+        document.getElementById('text').innerHTML = "You escaped!!"
+        document.getElementById('text').classList.add('escapeText');
+        document.getElementById('text').classList.remove('gameOverText');
+    } else {
+        document.getElementById('text').innerHTML = "Game over!";
+        document.getElementById('text').classList.add('gameOverText');
+        document.getElementById('text').classList.remove('escapeText');
+        setTimeout(resetGame, 2000);
+    }
+
+    
+}
+
+function resetGame() {
+    document.body.style.backgroundImage = "url(./enterance.png)";
+    document.getElementById('enterance').innerHTML = /*HTML*/`
+    <div id="leaveText"></div>
+    <div id="enteranceBtns">
+        <button style="font-size: 50px; background-color: darkred;" class="enterHouse" onclick="level1()">Enter</button>
+        <button style="font-size: 50px; " class="leaveHouse" onclick="leave()">Leave</button>
+    </div>
+    `;
+    document.getElementById('level1Div').innerHTML = "";
+}
+
+
+    
+</script>
+
+</body>
+</html>

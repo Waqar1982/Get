@@ -1,0 +1,37 @@
+.modell{
+    background-color: green;
+    height: 220px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    width: 220px;
+    box-sizing: 50%;
+    padding: 20px;
+    
+}
+.clockButton{
+    margin-top: 20px;
+    margin-left: 15px;
+    border-radius: 50%;
+    height:55px;
+    width: 50px;
+}
+
+.display{
+    height:100px;
+    width: 100px;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-left: 100px;
+    background-color: gray;
+}
+
+.roundsList{
+    background-color: gray;
+    height:100px;
+    width:100px;
+    border: 1px solid black;
+    margin-left: 50px;
+    font-size: medium;
+}

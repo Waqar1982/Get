@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematisk Kalkulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Matematisk Kalkulator</h1>
+
+    <input type="number" id="tall1" placeholder="Skriv første tall">
+    <input type="number" id="tall2" placeholder="Skriv andre tall">
+    <br>
+
+    <button onclick="leggSammen()">Legg sammen</button>
+    <button onclick="trekkFra()">Trekk fra</button>
+    <button onclick="multipliser()">Multipliser</button>
+    <button onclick="divider()">Divider</button>
+
+    <h3>Resultat:</h3>
+    <p id="resultat"></p>
+
+    <script>
+        // Funksjon for å legge sammen tallene
+        function leggSammen() {
+            let tall1 = parseFloat(document.getElementById("tall1").value);
+            let tall2 = parseFloat(document.getElementById("tall2").value);
+            if (tall1 + tall2) {
+                let resultat = tall1 + tall2;
+                document.getElementById("resultat").textContent = "Resultatet er: " + resultat;
+            } else {
+                document.getElementById("resultat").textContent = "Vennligst fyll ut begge tallene!";
+            }
+        }
+
+        // Funksjon for å trekke fra tallene
+        function trekkFra() {
+            let tall1 = parseFloat(document.getElementById("tall1").value);
+            let tall2 = parseFloat(document.getElementById("tall2").value);
+            if (tall1 + tall2) {
+                let resultat = tall1 - tall2;
+                document.getElementById("resultat").textContent = "Resultatet er: " + resultat;
+            } else {
+                document.getElementById("resultat").textContent = "Vennligst fyll ut begge tallene!";
+            }
+        }
+
+        // Funksjon for å multiplisere tallene
+        function multipliser() {
+            let tall1 = parseFloat(document.getElementById("tall1").value);
+            let tall2 = parseFloat(document.getElementById("tall2").value);
+            if (tall1 + tall2){
+                let resultat = tall1 * tall2;
+                document.getElementById("resultat").textContent = "Resultatet er: " + resultat;
+            } else {
+                document.getElementById("resultat").textContent = "Vennligst fyll ut begge tallene!";
+            }
+        }
+
+        // Funksjon for å dele tallene
+        function divider() {
+            let tall1 = parseFloat(document.getElementById("tall1").value);
+            let tall2 = parseFloat(document.getElementById("tall2").value);
+            if (tall1 + tall2) {
+                if (tall2 === 0) {
+                    document.getElementById("resultat").textContent = "Kan ikke dele med null!";
+                } else {
+                    let resultat = tall1 / tall2;
+                    document.getElementById("resultat").textContent = "Resultatet er: " + resultat;
+                }
+            } else {
+                document.getElementById("resultat").textContent = "Vennligst fyll ut begge tallene!";
+            }
+        }
+    </script>
+
+</body>
+</html>

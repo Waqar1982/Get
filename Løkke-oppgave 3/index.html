@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Text</title>
+</head>
+<body>
+
+  
+    <div id="app"></div>
+
+
+    <script>
+
+//modell
+const modell = {
+    app:{
+        view:document.querySelector("#app"),
+    },
+
+    input:{
+         text: ""
+    },
+
+    data:{},
+  
+   
+}
+
+
+
+//view
+updateview()
+function updateview(){
+    modell.app.view.innerHTML=/*html*/`
+    <input type="text"  placeholder="Skriv noe her" onchange="reverseText(this.value)">
+ 
+    <div>${modell.input.text}</div>
+    `;
+}
+
+
+
+
+//controller
+
+
+
+        function reverseText(inputElement) {
+           
+            let reversed = "";
+
+            for (let i = inputElement.length - 1; i >= 0; i--) {
+                reversed += inputElement[i];
+            }   
+            modell.input.text = reversed;
+            updateview()
+        
+        }
+
+    </script>
+
+</body>
+</html>

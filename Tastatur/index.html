@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tastatur</title>
+    <style>
+        
+        .keyboard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 200px;
+            margin: 30px auto ;
+            background-color: black;
+            
+        }
+        .key {
+            padding: 10px;
+            margin: 5px;
+            background-color: gray;
+            border: 1px solid gray;
+            cursor: pointer;
+            text-align: center;
+            
+        }
+        #inputField {
+            width: 200px;
+            padding: 50px;
+            margin: 30px auto;
+            background-color:white;
+          
+            
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="" id="inputField" />
+    <div class="keyboard">
+        <div class="key" onclick="Trykk(this)">A</div>
+        <div class="key" onclick="Trykk(this)">B</div>
+        <div class="key" onclick="Trykk(this)">C</div>
+        <div class="key" onclick="Trykk(this)">D</div>
+        <div class="key" onclick="Trykk(this)">E</div>
+        <div class="key" onclick="Trykk(this)">F</div>
+        <div class="key" onclick="Trykk(this)">G</div>
+        <div class="key" onclick="Trykk(this)">H</div>
+        <div class="key" onclick="Trykk(this)">I</div>
+        <div class="key" onclick="Trykk(this)">J</div>
+        <div class="key" onclick="Trykk(this)">K</div>
+        <div class="key" onclick="Trykk(this)">L</div>
+        <div class="key" onclick="Trykk(this)">M</div>
+        <div class="key" onclick="Trykk(this)">N</div>
+        <div class="key" onclick="Trykk(this)">O</div>
+        <div class="key" onclick="Trykk(this)">P</div>
+        <div class="key" onclick="Trykk(this)">Q</div>
+        <div class="key" onclick="Trykk(this)">R</div>
+        <div class="key" onclick="Trykk(this)">S</div>
+        <div class="key" onclick="Trykk(this)">T</div>
+        <div class="key" onclick="Trykk(this)">U</div>
+        <div class="key" onclick="Trykk(this)">V</div>
+        <div class="key" onclick="Trykk(this)">W</div>
+        <div class="key" onclick="Trykk(this)">X</div>
+        <div class="key" onclick="Trykk(this)">Y</div>
+        <div class="key" onclick="Trykk(this)">Z</div>
+        <div class="key" onclick="Trykk(this)">Ø</div>
+        <div class="key" onclick="Trykk(this)">Æ</div>
+        <div class="key" onclick="Trykk(this)">Å</div>
+        <div class="key" onclick="clearInput(this)">Clear</div>
+        <div class="key" onclick="spaceInput(this)">---</div>
+        <button onclick="endrecase(this)">lowercase </button>
+    </div>
+    
+    <script>
+        let aktivcase= false
+        
+
+        function endrecase(element){
+            aktivcase=!aktivcase
+            if(aktivcase){
+                element.innerHTML="uppercase"
+            }
+            else{
+                element.innerHTML="lowercase"
+
+            }
+
+        }
+
+        function Trykk(element) {
+            const inputField = document.getElementById('inputField');
+            let nyBokstav=''
+            if(aktivcase){
+                nyBokstav= element.innerHTML.toUpperCase();
+            }
+            else{
+                nyBokstav= element.innerHTML.toLowerCase();
+            }
+
+            inputField.value += nyBokstav;
+
+        }
+
+        function clearInput() {
+            const inputField = document.getElementById('inputField');
+            inputField.value = '';
+        }
+        function spaceInput() {
+  var textField = document.getElementById('inputField');
+  textField.value += " ";
+}
+    </script>
+</body>
+</html>

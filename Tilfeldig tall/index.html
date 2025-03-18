@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilfeldig Tall</title>
+</head>
+<body>
+
+    <h1>Tilfeldig tall</h1>
+    <button onclick="tall()">Generer tilfeldig tall</button>
+    
+    <div id="resultat"></div> 
+
+    <script>
+        function tall() {
+           
+            var tall = Math.floor(Math.random() * 100) + 1;
+            
+           
+        
+            
+            document.getElementById("resultat").innerHTML = "Det tilfeldige tallet er: " + tall
+            
+            ;
+        }
+    </script>
+
+</body>
+</html>

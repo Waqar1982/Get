@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teller</title>
+</head>
+<body>
+
+   
+    
+ <div style="display: inline; font-family: cursive;">  
+
+ <button onclick="Down()"style="width: 100px; height: 100px;
+font-size: 50px; border-radius: 50px; background-color: aqua;"
+>◀</button>
+
+ <div id="text" style="display: inline;color: blue; font-size: 50px; ;"></div>
+ 
+
+<button onclick="Up()" style="width: 100px; height: 100px;
+font-size: 50px; border-radius: 50px; background-color: aqua;">▶</button>
+
+</div> 
+<script>
+var number = 0;
+var textdiv = document.getElementById('text')
+
+function Down(){
+    number--;
+    textdiv.innerHTML= number;
+}
+
+function Up(){
+number++;
+textdiv.innerHTML= number;
+}
+
+
+
+
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+
+<script>
+let app = document.getElementById('app');
+
+app.innerHTML = /*html*/ `
+   <button onclick="printNum('')">Print</button> <br>
+`;
+
+
+function printNum() {
+  let i = 1;
+  while (i <= 1) {
+   let num1 = Math.floor(Math.random() * 10) + 1;
+    let num2 = Math.floor(Math.random() * 10) + 1;  
+    if (num1 === num2) {
+     app.innerHTML += `${num1} , ${num2} Equal number found! <br>`;
+    }else{
+     app.innerHTML += `${num1} , ${num2} <br>`;
+    }
+    i++;
+}
+}
+
+</script>
+
+
+
+</html>

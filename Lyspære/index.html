@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyspære</title>
+    <style>
+        #off {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 18px;
+            color: black;
+        }
+        #switch {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="off">
+    Lyspæren er av
+</div>
+<button id="switch" onclick="toggleLight()">Trykk for å skru på/av</button>
+
+<script>
+    let lysOn = false;
+
+    function toggleLight() {
+       
+        lysOn = !lysOn;
+        
+     
+        const lightbulb = document.getElementById("off");
+        lightbulb.style.backgroundColor = lysOn ? "yellow" : "gray";
+        lightbulb.textContent = lysOn ? "Lyspæren er på" : "Lyspæren er av";
+    }
+</script>
+
+</body>
+</html>
