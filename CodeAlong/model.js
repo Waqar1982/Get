@@ -1,4 +1,7 @@
 const app = document.getElementById("app")
+let inputName = ""
+let inputage =""
+
 
 let liste =[
 {
